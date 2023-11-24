@@ -200,3 +200,7 @@ joe.scopeArrow();
 //When joe.scopeArrow() is invoked, within the scopeArrow method, this refers to the global object. This is because arrow functions do not have their own this context; instead, they inherit the this value from the enclosing scope at the time the arrow function is defined. In this case, the arrow function is defined in the global scope.
 // 3. Explain why "this" is different when an arrow function is used.
 //Arrow functions do not have their own this context; instead, they inherit this from the enclosing lexical scope at the time the arrow function is defined. This behavior is known as "lexical scoping." In contrast, regular functions have their own this context, which is dynamically determined at runtime based on how the function is called. Arrow functions are particularly useful when you want to maintain the this value from the surrounding scope, making them convenient for certain use cases, but it can lead to unexpected behavior if not understood correctly. In the given example, the arrow function scopeArrow inside the prototype of Student inherits this from the global scope when invoked, leading to a different value for this compared to the regular function scope.
+
+// What are some more complex scenarios which arrow statements can be used?
+// I find it weird that arrow functions dont have their own this statements
+// 25 min
