@@ -152,7 +152,7 @@ let joe = new Student('Joe Schmoe', 100, 'Anytown, USA');
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
-// console.log(joe);
+console.log(joe);
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -164,18 +164,18 @@ Student.prototype.greeting = function() {
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+console.log(joe.greeting());
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
 
 
-Student.courseName = function() {
+Student.courseName = () => {
   return 'This student is enrolled in Code 301.';
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+console.log(Student.courseName());
 
 
 
@@ -186,17 +186,17 @@ Student.prototype.scope = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scope();
+joe.scope();
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scopeArrow();
+joe.scopeArrow();
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+//When joe.scope() is invoked, within the scope method, this refers to the joe object. This is because regular functions have their own this context, and it is dynamically bound to the object that called the method (joe in this case).
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+//When joe.scopeArrow() is invoked, within the scopeArrow method, this refers to the global object. This is because arrow functions do not have their own this context; instead, they inherit the this value from the enclosing scope at the time the arrow function is defined. In this case, the arrow function is defined in the global scope.
 // 3. Explain why "this" is different when an arrow function is used.
-//
+//Arrow functions do not have their own this context; instead, they inherit this from the enclosing lexical scope at the time the arrow function is defined. This behavior is known as "lexical scoping." In contrast, regular functions have their own this context, which is dynamically determined at runtime based on how the function is called. Arrow functions are particularly useful when you want to maintain the this value from the surrounding scope, making them convenient for certain use cases, but it can lead to unexpected behavior if not understood correctly. In the given example, the arrow function scopeArrow inside the prototype of Student inherits this from the global scope when invoked, leading to a different value for this compared to the regular function scope.
